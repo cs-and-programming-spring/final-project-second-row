@@ -1,6 +1,4 @@
-//Test Edit _ny
-//Test Push _ny
-//Test Pull/Refresh _ny
+//delete
 
 
 /***********************************************
