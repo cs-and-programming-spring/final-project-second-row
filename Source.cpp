@@ -1,6 +1,6 @@
 /*************************************************************************************
 * Name:		Second Row Final Project
-* Members:	Alex B., David A. M., Issolif K., Kristen H., Neil Y., Nick S., & Rob M.
+* Members:	Alex B., David A. M., Issouf K., Kristen H., Neil Y., Nick S., & Rob M.
 * Purpose:	Airline Booking & Admin Program
 *************************************************************************************/
 
@@ -11,7 +11,7 @@ using namespace std;
 int main(){
 
 //--Program Menu--
-	cout << "-----Fligh Admin Menu-----" << endl;
+	cout << "-----Flight Admin Menu-----" << endl;
 	bool run = true;
 	int choice = 0;
 	while (run) {
