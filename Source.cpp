@@ -4,6 +4,7 @@
 * Purpose:	Airline Booking & Admin Program
 *************************************************************************************/
 
+#include "staff.h"
 #include <iostream>
 using namespace std; 
 
