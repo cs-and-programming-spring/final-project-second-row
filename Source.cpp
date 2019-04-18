@@ -1,6 +1,6 @@
 /*************************************************************************************
 * Name:		Second Row Final Project
-* Members:	Alex B., Alex M., Issolif K., Kristen H., Neil Y., Nick S., & Rob M.
+* Members:	Alex B., David A. M., Issolif K., Kristen H., Neil Y., Nick S., & Rob M.
 * Purpose:	Airline Booking & Admin Program
 *************************************************************************************/
 
