@@ -1,7 +1,7 @@
 /*************************************************************************************
 * Name:		Second Row Final Project
 * Members:	Alex B., David A. M., Issouf K., Kristen H., Neil Y., Nick S., & Rob M.
-* Purpose:	Airline Booking & Admin Program
+* Purpose:	Wedding Program
 *************************************************************************************/
 
 #include <iostream>
@@ -10,7 +10,7 @@ using namespace std;
 int main(){
 
 //--Program Menu--
-	cout << "-----Flight Admin Menu-----" << endl;
+	cout << "-----Wedding Program Menu-----" << endl;
 	bool run = true;
 	int choice = 0;
 	while (run) {
