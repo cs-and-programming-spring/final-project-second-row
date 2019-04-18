@@ -4,13 +4,15 @@
 * Purpose:	Airline Booking & Admin Program
 *************************************************************************************/
 
-#include "staff.h"
+
+//Test push in neilz branch
+//#include "staff.h"
 #include <iostream>
-using namespace std; 
+using namespace std;
 
-int main(){
+int main() {
 
-//--Program Menu--
+	//--Program Menu--
 	cout << "-----Fligh Admin Menu-----" << endl;
 	bool run = true;
 	int choice = 0;
@@ -31,61 +33,61 @@ int main(){
 			cin >> choice;
 		}
 		cout << "\n";
-		
-//--Program 1--
-	if (choice == 1) {
-		cout << "-----Program 1-----" << endl;
-		//INSERT CODE FOR PROGRAM 1
-	}
-		
-//--Program 2--
-	if (choice == 2) {
-		cout << "-----Program 2-----" << endl;
-		//INSERT CODE FOR PROGRAM 2
-	}
-		
-//--Program 3--
-	if (choice == 3) {
-		cout << "-----Program 3-----" << endl;
-		//INSERT CODE FOR PROGRAM 3
-	}
-		
-//--Program 4--
-	if (choice == 4) {
-		cout << "-----Program 4-----" << endl;
-		//INSERT CODE FOR PROGRAM 4
-	}
-		
-//--Program 5--
-	if (choice == 5) {
-		cout << "-----Program 5-----" << endl;
-		//INSERT CODE FOR PROGRAM 5
-	}
-		
-//--Program 6--
-	if (choice == 6) {
-		cout << "-----Program 6-----" << endl;
-		//INSERT CODE FOR PROGRAM 6
-	}
-		
-//--Program 7--
-	if (choice == 7) {
-		cout << "-----Program 7-----" << endl;
-		//INSERT CODE FOR PROGRAM 7
-	}
-		
-//--Run Another Program?
-	string answer;
-	cout << endl << "Would you like to run another program? (y/n) ";
+
+		//--Program 1--
+		if (choice == 1) {
+			cout << "-----Program 1-----" << endl;
+			//INSERT CODE FOR PROGRAM 1
+		}
+
+		//--Program 2--
+		if (choice == 2) {
+			cout << "-----Program 2-----" << endl;
+			//INSERT CODE FOR PROGRAM 2
+		}
+
+		//--Program 3--
+		if (choice == 3) {
+			cout << "-----Program 3-----" << endl;
+			//INSERT CODE FOR PROGRAM 3
+		}
+
+		//--Program 4--
+		if (choice == 4) {
+			cout << "-----Program 4-----" << endl;
+			//INSERT CODE FOR PROGRAM 4
+		}
+
+		//--Program 5--
+		if (choice == 5) {
+			cout << "-----Program 5-----" << endl;
+			//INSERT CODE FOR PROGRAM 5
+		}
+
+		//--Program 6--
+		if (choice == 6) {
+			cout << "-----Program 6-----" << endl;
+			//INSERT CODE FOR PROGRAM 6
+		}
+
+		//--Program 7--
+		if (choice == 7) {
+			cout << "-----Program 7-----" << endl;
+			//INSERT CODE FOR PROGRAM 7
+		}
+
+		//--Run Another Program?
+		string answer;
+		cout << endl << "Would you like to run another program? (y/n) ";
 		cin >> answer;
 		cout << "\n";
 		if (answer == "No" || answer == "no" || answer == "NO" || answer == "n" || answer == "N")
 			run = false;
 
 	} //run while
-	
+
 	cout << endl << "The End. Goodbye.";
 	system("pause");
 	return 0;
-	
+
 } //int main
