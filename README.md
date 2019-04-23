@@ -4,6 +4,35 @@ Memebers Alex B., David A. M., Issouf K., Kristen H., Neil Y., Nick S., & Rob M.
 
 This program is for two types of users - guests and the wedding planner
 
+  Guests have the ability to:
+  
+        - sign in individually
+        
+        - choose a meal
+        
+        - register a gift
+        
+        - book a hotel room 
+        
+        
+  The Wedding planner has the ability to:
+  
+        - set the maximum amount number seats 
+        
+        - set up the menu for guests to choose a meal from 
+        
+        - set up the registry [can choose gifts or choose cash]
+        
+        - overlook all the guests that signed in 
+        
+                  (name, meal, gift, yes or no if guest booked a hotel room)
+                  
+                  
+  The Wedding Planner also has their own login
+  
+    Password: _____
+
+
 # PSEDUO CODE DOWN BELOW
 
 {
@@ -46,31 +75,3 @@ If Guest - Input name
                  - If no, exits the menu
                  
 }
-
-  Guests have the ability to:
-  
-        - sign in individually
-        
-        - choose a meal
-        
-        - register a gift
-        
-        - book a hotel room 
-        
-        
-  The Wedding planner has the ability to:
-  
-        - set the maximum amount number seats 
-        
-        - set up the menu for guests to choose a meal from 
-        
-        - set up the registry [can choose gifts or choose cash]
-        
-        - overlook all the guests that signed in 
-        
-                  (name, meal, gift, yes or no if guest booked a hotel room)
-                  
-                  
-  The Wedding Planner also has their own login
-  
-    Password: _____
