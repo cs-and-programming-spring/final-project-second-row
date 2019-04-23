@@ -10,23 +10,21 @@ using namespace std;
 int main(){
 
 //--Program Menu--
-	cout << "-----Flight Admin Menu-----" << endl;
+	cout << "-----Admin Menu-----" << endl;
 	bool run = true;
 	int choice = 0;
 	while (run) {
-		cout << "Available programs:" << endl;
-		cout << "(1) Program 1" << endl;
+		cout << "Available programs" << endl;
+		cout << "(1) Set the maximum number of guests" << endl;
 		cout << "(2) Program 2" << endl;
 		cout << "(3) Program 3" << endl;
 		cout << "(4) Program 4" << endl;
-		cout << "(5) Program 5" << endl;
-		cout << "(6) Program 6" << endl;
-		cout << "(7) Program 7" << endl;
+		
 		cout << "Please choose a program to run from the list above: ";
 		cin >> choice;
 		//validate choice with while-loop
-		while (choice < 1 || choice > 7) {
-			cout << "Please enter a number between 1 & 7: ";
+		while (choice < 1 || choice > 4) {
+			cout << "Please enter a number between 1 & 4: ";
 			cin >> choice;
 		}
 		cout << "\n";
@@ -34,7 +32,10 @@ int main(){
 //--Program 1--
 	if (choice == 1) {
 		cout << "-----Program 1-----" << endl;
-		//INSERT CODE FOR PROGRAM 1
+		int q;
+			 cout << "please enter the maximum nuber of quests: ";
+ 			 cin >> q;
+			 cout << "the number of quests are " << q << ".";
 	}
 		
 //--Program 2--
@@ -53,24 +54,6 @@ int main(){
 	if (choice == 4) {
 		cout << "-----Program 4-----" << endl;
 		//INSERT CODE FOR PROGRAM 4
-	}
-		
-//--Program 5--
-	if (choice == 5) {
-		cout << "-----Program 5-----" << endl;
-		//INSERT CODE FOR PROGRAM 5
-	}
-		
-//--Program 6--
-	if (choice == 6) {
-		cout << "-----Program 6-----" << endl;
-		//INSERT CODE FOR PROGRAM 6
-	}
-		
-//--Program 7--
-	if (choice == 7) {
-		cout << "-----Program 7-----" << endl;
-		//INSERT CODE FOR PROGRAM 7
 	}
 		
 //--Run Another Program?
