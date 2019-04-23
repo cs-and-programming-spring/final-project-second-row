@@ -2,7 +2,7 @@
 Team Second Row
 Memebers Alex B., David A. M., Issouf K., Kristen H., Neil Y., Nick S., & Rob M.
 
-This program is for two types of users - guests and the wedding planner
+This program is for users that are involved in a wedding. There are two users, guests that are signing in and the wedding planner.  
 
   Guests have the ability to:
   
@@ -28,7 +28,7 @@ This program is for two types of users - guests and the wedding planner
                   (name, meal, gift, yes or no if guest booked a hotel room)
                   
                   
-  The Wedding Planner also has their own login
+  This is the Wedding Planner's password
   
     Password: _____
 
