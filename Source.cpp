@@ -11,7 +11,7 @@ using namespace std;
 int main(){
 
 //--Program Menu--
-	cout << "-----Fligh Admin Menu-----" << endl;
+	cout << "-----Guest Menu-----" << endl;
 	bool run = true;
 	int choice = 0;
 	while (run) {
