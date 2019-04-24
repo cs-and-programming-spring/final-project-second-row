@@ -1,17 +1,17 @@
 PSEUDO CODE FOR Alex-B
 ??? Ask a question about these areas
 
-Gift Registry(Takes a Collection of gifts){
+Gift Registry(Takes a Collection of gifts, the gifts will all be strings){
   Asks the user: "What would you like to do to the gift registry?"
   
   1 - Add a gift
-      - First asks whether they will be giving an actual gift or just cash.
+      - First asks whether they will be giving an actual gift or just cash, cash will still be treated as a string.
       - If an actual gift, input the gift and add to the gift registry
-      - If cash, input the amount of cash and ??? 
+      - If cash, input the amount of cash and add it to the gift registry
       
   2 - Remove a gift (There should be some way to retrieve a specific gift for this)
-      - Input the "key" ??? for the gift the user would like to remove (guest giving the gift)
-      - The gift object will be removed from the registry
+      - Input the "key" (either the guest giving the gift or a string equal to the gift).
+      - The gift will be removed from the registry
       
   3 - View the registry
       - Prints out every gift item, and the giver of said gift. It's as simple as that!
