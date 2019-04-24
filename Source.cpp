@@ -1,7 +1,7 @@
 /*************************************************************************************
 * Name:		Second Row Final Project
 * Members:	Alex B., David A. M., Issolif K., Kristen H., Neil Y., Nick S., & Rob M.
-* Purpose:	Airline Booking & Admin Program
+* Purpose:	Wedding Guest Log in and Wedding Planner Program
 *************************************************************************************/
 
 #include "staff.h"
