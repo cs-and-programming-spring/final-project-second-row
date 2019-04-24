@@ -16,62 +16,34 @@ int main(){
 	int choice = 0;
 	while (run) {
 		cout << "Available programs:" << endl;
-		cout << "(1) Program 1" << endl;
-		cout << "(2) Program 2" << endl;
-		cout << "(3) Program 3" << endl;
-		cout << "(4) Program 4" << endl;
-		cout << "(5) Program 5" << endl;
-		cout << "(6) Program 6" << endl;
-		cout << "(7) Program 7" << endl;
+		cout << "(1) Choose a meal" << endl;
+		cout << "(2) Register a gift" << endl;
+		cout << "(3) Verification of hotel reservation" << endl;
 		cout << "Please choose a program to run from the list above: ";
 		cin >> choice;
 		//validate choice with while-loop
-		while (choice < 1 || choice > 7) {
-			cout << "Please enter a number between 1 & 7: ";
+		while (choice < 1 || choice > 3) {
+			cout << "Please enter a number between 1 & 3: ";
 			cin >> choice;
 		}
 		cout << "\n";
 		
 //--Program 1--
 	if (choice == 1) {
-		cout << "-----Program 1-----" << endl;
+		cout << "-----Chossing a meal-----" << endl;
 		//INSERT CODE FOR PROGRAM 1
 	}
 		
 //--Program 2--
 	if (choice == 2) {
-		cout << "-----Program 2-----" << endl;
+		cout << "-----Registering a gift for the bride and groom-----" << endl;
 		//INSERT CODE FOR PROGRAM 2
 	}
 		
 //--Program 3--
 	if (choice == 3) {
-		cout << "-----Program 3-----" << endl;
+		cout << "-----Hotel Reservation Program-----" << endl;
 		//INSERT CODE FOR PROGRAM 3
-	}
-		
-//--Program 4--
-	if (choice == 4) {
-		cout << "-----Program 4-----" << endl;
-		//INSERT CODE FOR PROGRAM 4
-	}
-		
-//--Program 5--
-	if (choice == 5) {
-		cout << "-----Program 5-----" << endl;
-		//INSERT CODE FOR PROGRAM 5
-	}
-		
-//--Program 6--
-	if (choice == 6) {
-		cout << "-----Program 6-----" << endl;
-		//INSERT CODE FOR PROGRAM 6
-	}
-		
-//--Program 7--
-	if (choice == 7) {
-		cout << "-----Program 7-----" << endl;
-		//INSERT CODE FOR PROGRAM 7
 	}
 		
 //--Run Another Program?
@@ -84,7 +56,7 @@ int main(){
 
 	} //run while
 	
-	cout << endl << "The End. Goodbye.";
+	cout << endl << "The End. Goodbye";
 	system("pause");
 	return 0;
 	
