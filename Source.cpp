@@ -5,6 +5,7 @@
 *************************************************************************************/
 
 #include <iostream>
+#include <string>
 using namespace std; 
 
 int main(){
@@ -14,14 +15,14 @@ int main(){
 	bool run = true;
 	int choice = 0;
 	while (run) {
-		cout << "Available programs:" << endl;
+		cout << "Available Programs:" << endl;
 		cout << "(1) Program 1" << endl;
 		cout << "(2) Program 2" << endl;
 		cout << "(3) Program 3" << endl;
 		cout << "(4) Program 4" << endl;
 		cout << "(5) Program 5" << endl;
 		cout << "(6) Program 6" << endl;
-		cout << "(7) Program 7" << endl;
+		cout << "(7) Hotel Booking" << endl;
 		cout << "Please choose a program to run from the list above: ";
 		cin >> choice;
 		//validate choice with while-loop
@@ -69,8 +70,41 @@ int main(){
 		
 //--Program 7--
 	if (choice == 7) {
-		cout << "-----Program 7-----" << endl;
+		cout << "-----Program 7 Hotel Booking-----" << endl;
 		//INSERT CODE FOR PROGRAM 7
+			bool reg = true;
+	string book, guestname, ccnum, confirm = "*randomnum*";
+	int cvv, zip;
+	
+	cout << "Would you like to book a hotel room? (y/n) " << endl;
+	cin >> book;
+	cout << "\n";
+		if (book == "N" || book == "n")
+			reg = false;
+		
+			if (reg == true){
+				//collect registration info
+				cout << "Please enter your Name (no spaces for now): " << endl; //can't I get this from the login?
+				cin >> guestname; //fix issue with spaces entered in names
+				cout << "\n";
+				cout << "Please enter your Credit Card Number: " << endl;
+				cin >> ccnum; //convert to private in class
+				cout << "\n";
+				cout << "Please enter your Credit Card CVV: " << endl;
+				cin >> cvv;
+				cout << "\n";
+				cout << "Please enter your Zip Code: " << endl;
+				cin >> zip;
+				cout << "\n";
+	
+				//confirm booking
+				cout << "Thank you for booking with our hotel.\n";
+				cout << "Your confirmation number is " << confirm << endl; //randomly generate and possible save to user struct
+				
+			} //if-reg-true
+	
+			if (reg == false)
+				cout << "We hope you enjoy the Wedding!" << endl;
 	}
 		
 //--Run Another Program?
@@ -170,7 +204,7 @@ int main(){
       cout << "Available programs:" << endl;
       cout << "(1) Wedding Planner" << endl;
       cout << "(2) Guest" << endl;
-      cout << "Please choose a program to run from the list above: ";
+      cout << "Please choose a program to run fromthe list above: ";
       cin >> choice;
 
 		}
