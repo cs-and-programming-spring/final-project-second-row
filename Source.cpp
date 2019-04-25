@@ -1,7 +1,7 @@
 /*************************************************************************************
 * Name:		Second Row Final Project
 * Members:	Alex B., David A. M., Issolif K., Kristen H., Neil Y., Nick S., & Rob M.
-* Purpose:	Airline Booking & Admin Program
+* Purpose:	Wedding Planning Program
 *************************************************************************************/
 
 
@@ -15,7 +15,7 @@ void newBooking();
 int main() {
 
 	//--Program Menu--
-	cout << "-----Fligh Admin Menu-----" << endl;
+	cout << "-----Wedding Planning Menu-----" << endl;
 	bool run = true;
 	int choice = 0;
 	while (run) {
@@ -113,8 +113,7 @@ int main() {
 } //int main
 
 void newBooking(){
-	string guestname, ccnum;
-	int cvv, zip;
+	string guestname, ccnum, cvv, zip;
 	
 	//collect registration info
 	cout << "Please enter your Name: " << endl; //can't I get this from the login?
@@ -122,12 +121,12 @@ void newBooking(){
 	getline (cin,guestname);
 	cout << "\n";
 	cout << "Please enter your Credit Card Number: " << endl;
-	cin >> ccnum; //convert to private in class
+	getline (cin,ccnum);
 	cout << "\n";
 	cout << "Please enter your Credit Card CVV: " << endl;
-	cin >> cvv;
+	getline (cin,cvv);
 	cout << "\n";
 	cout << "Please enter your Zip Code: " << endl;
-	cin >> zip;
+	getline (cin,zip);
 	cout << "\n";
 } //newBooking
