@@ -21,9 +21,9 @@ struct guest {
 	enum meal {Steak, Chicken, Vegetarian};
 	bool hotel;
 	string ccnum;
-}
+};
 	
-	cout << "Welcome to the Wedding RSVP Program./n";
+	cout << "Welcome to the Wedding RSVP Program." << endl;
 	
 //RSVP
 
