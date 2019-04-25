@@ -5,10 +5,12 @@
 *************************************************************************************/
 
 
-//Test push in neilz branch
-//#include "staff.h"
 #include <iostream>
+#include <string>
+#include <cstdlib>
 using namespace std;
+
+void newBooking();
 
 int main() {
 
@@ -24,7 +26,7 @@ int main() {
 		cout << "(4) Program 4" << endl;
 		cout << "(5) Program 5" << endl;
 		cout << "(6) Program 6" << endl;
-		cout << "(7) Program 7" << endl;
+		cout << "(7) Book Hotel Room" << end;
 		cout << "Please choose a program to run from the list above: ";
 		cin >> choice;
 		//validate choice with while-loop
@@ -72,9 +74,27 @@ int main() {
 
 		//--Program 7--
 		if (choice == 7) {
-			cout << "-----Program 7-----" << endl;
-			//INSERT CODE FOR PROGRAM 7
-		}
+			cout << "-----Hotel Booking-----" << endl;
+			bool reg = true;
+			string book;
+			int confirm = rand();
+	
+			cout << "Would you like to book a hotel room? (y/n) " << endl;
+			cin >> book;
+			cout << "\n";
+				if (book == "N" || book == "n")
+				reg = false;
+		
+				if (reg == true){
+					newBooking();
+					//confirm booking
+					cout << "Thank you for booking with our hotel.\n";
+					cout << "Your confirmation number is " << confirm << ".\n"; //possibly save to user struct
+				} //if-reg-true
+	
+				if (reg == false)
+					cout << "OK. We hope you enjoy the Wedding!" << endl;
+			} //7
 
 		//--Run Another Program?
 		string answer;
@@ -91,3 +111,23 @@ int main() {
 	return 0;
 
 } //int main
+
+void newBooking(){
+	string guestname, ccnum;
+	int cvv, zip;
+	
+	//collect registration info
+	cout << "Please enter your Name: " << endl; //can't I get this from the login?
+	cin.ignore();
+	getline (cin,guestname);
+	cout << "\n";
+	cout << "Please enter your Credit Card Number: " << endl;
+	cin >> ccnum; //convert to private in class
+	cout << "\n";
+	cout << "Please enter your Credit Card CVV: " << endl;
+	cin >> cvv;
+	cout << "\n";
+	cout << "Please enter your Zip Code: " << endl;
+	cin >> zip;
+	cout << "\n";
+} //newBooking
