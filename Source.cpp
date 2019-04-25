@@ -26,51 +26,51 @@ int main() {
 		cout << "(4) Program 4" << endl;
 		cout << "(5) Program 5" << endl;
 		cout << "(6) Program 6" << endl;
-		cout << "(7) Book Hotel Room" << end;
+		cout << "(7) Book Hotel Room" << endl;
 		cout << "Please choose a program to run from the list above: ";
 		cin >> choice;
 		//validate choice with while-loop
 		while (choice < 1 || choice > 7) {
 			cout << "Please enter a number between 1 & 7: ";
 			cin >> choice;
-		}
+		} //while
 		cout << "\n";
 
 		//--Program 1--
 		if (choice == 1) {
 			cout << "-----Program 1-----" << endl;
 			//INSERT CODE FOR PROGRAM 1
-		}
+		} //1
 
 		//--Program 2--
 		if (choice == 2) {
 			cout << "-----Program 2-----" << endl;
 			//INSERT CODE FOR PROGRAM 2
-		}
+		} //2
 
 		//--Program 3--
 		if (choice == 3) {
 			cout << "-----Program 3-----" << endl;
 			//INSERT CODE FOR PROGRAM 3
-		}
+		} //3
 
 		//--Program 4--
 		if (choice == 4) {
 			cout << "-----Program 4-----" << endl;
 			//INSERT CODE FOR PROGRAM 4
-		}
+		} //4
 
 		//--Program 5--
 		if (choice == 5) {
 			cout << "-----Program 5-----" << endl;
 			//INSERT CODE FOR PROGRAM 5
-		}
+		} //5
 
 		//--Program 6--
 		if (choice == 6) {
 			cout << "-----Program 6-----" << endl;
 			//INSERT CODE FOR PROGRAM 6
-		}
+		} //6
 
 		//--Program 7--
 		if (choice == 7) {
