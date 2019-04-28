@@ -1,74 +1,89 @@
 /*************************************************************************************
 * Name:		Second Row Final Project
-* Members:	Alex B., David A. M., Issouf K., Kristen H., Neil Y., Nick S., & Rob M.
-* Purpose:	Airline Booking & Admin Program
+* Members:	Alex B., David A. M., Issolif K., Kristen H., Neil Y., Nick S., & Rob M.
+* Purpose:	Wedding Planning Program
 *************************************************************************************/
 
 #include <iostream>
-using namespace std; 
+#include <string>
+#include <cstdlib>
+using namespace std;
 
-int main(){
+void newBooking();
 
-//--Program Menu--
-	cout << "-----Admin Menu-----" << endl;
-	bool run = true;
-	int choice = 0;
-	while (run) {
-		cout << "Available programs" << endl;
-		cout << "(1) Set the maximum number of guests" << endl;
-		cout << "(2) Program 2" << endl;
-		cout << "(3) Program 3" << endl;
-		cout << "(4) Program 4" << endl;
-		
-		cout << "Please choose a program to run from the list above: ";
-		cin >> choice;
-		//validate choice with while-loop
-		while (choice < 1 || choice > 4) {
-			cout << "Please enter a number between 1 & 4: ";
-			cin >> choice;
-		}
-		cout << "\n";
-		
-//--Program 1--
-	if (choice == 1) {
-		cout << "-----Program 1-----" << endl;
-		int q;
-			 cout << "please enter the maximum nuber of quests: ";
- 			 cin >> q;
-			 cout << "the number of quests are " << q << ".";
-	}
-		
-//--Program 2--
-	if (choice == 2) {
-		cout << "-----Program 2-----" << endl;
-		//INSERT CODE FOR PROGRAM 2
-	}
-		
-//--Program 3--
-	if (choice == 3) {
-		cout << "-----Program 3-----" << endl;
-		//INSERT CODE FOR PROGRAM 3
-	}
-		
-//--Program 4--
-	if (choice == 4) {
-		cout << "-----Program 4-----" << endl;
-		//INSERT CODE FOR PROGRAM 4
-	}
-		
-//--Run Another Program?
-	string answer;
-	cout << endl << "Would you like to run another program? (y/n) ";
-		cin >> answer;
-		cout << "\n";
-		if (answer == "No" || answer == "no" || answer == "NO" || answer == "n" || answer == "N")
-			run = false;
-
-	} //run while
+int main() {
 	
+//Create User Struct
+struct guest {
+	string name;
+	bool plusOne;
+	enum gift {China, Silverware, Trip, Cash};
+	enum meal {Steak, Chicken, Vegetarian};
+	bool hotel;
+	string ccnum;
+};
+	
+	cout << "Welcome to the Wedding RSVP Program." << endl;
+	
+//RSVP
+
+	cout << "-----RSVP-----" << endl;
+	//INSERT RSVP CODE
+
+//GIFT REGISTRY
+
+	cout << "-----Gift Registry-----" << endl;
+	//INSERT GIFT CODE
+
+//MEAL CHOICE
+
+	cout << "-----Meal Choice-----" << endl;
+	//INSERT MEAL CODE
+
+
+//HOTEL BOOKING
+			cout << "-----Hotel Booking-----" << endl;
+			bool reg = true;
+			string book;
+			int confirm = rand();
+	
+			cout << "Would you like to book a hotel room? (y/n) " << endl;
+			cin >> book;
+			cout << "\n";
+				if (book == "N" || book == "n")
+				reg = false;
+		
+				if (reg == true){
+					newBooking();
+					//confirm booking
+					cout << "Thank you for booking with our hotel.\n";
+					cout << "Your confirmation number is " << confirm << ".\n"; //possibly save to user struct
+				} //if-reg-true
+	
+				if (reg == false)
+					cout << "OK. We hope you enjoy the Wedding!" << endl;
+
 	cout << endl << "The End. Goodbye.";
 	system("pause");
 	return 0;
-	
+
 } //int main
 
+void newBooking(){
+	string guestname, ccnum, cvv, zip;
+	
+	//collect registration info
+	cout << "Please enter your Name: " << endl; //can't I get this from the login?
+	cin.ignore();
+	getline (cin,guestname);
+	cout << "\n";
+	cout << "Please enter your Credit Card Number: " << endl;
+	getline (cin,ccnum);
+	cout << "\n";
+	cout << "Please enter your Credit Card CVV: " << endl;
+	getline (cin,cvv);
+	cout << "\n";
+	cout << "Please enter your Zip Code: " << endl;
+	getline (cin,zip);
+	cout << "\n";
+} //newBooking
