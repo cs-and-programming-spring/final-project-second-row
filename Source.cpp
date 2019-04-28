@@ -16,7 +16,7 @@ int main() {
 //Create User Struct
 struct guest {
 	string name;
-	bool plusOne;
+	int plusOne;
 	enum gift {China, Silverware, Trip, Cash};
 	enum meal {Steak, Chicken, Vegetarian};
 	bool hotel;
@@ -28,7 +28,16 @@ struct guest {
 //RSVP
 
 	cout << "-----RSVP-----" << endl;
-	//INSERT RSVP CODE
+	//Date or no date
+	
+	for(int i = 1; i <= 5; i++){
+		cout << "Are you bringing a date? (yes or no)" << endl;
+		cin >> answer;
+   			if(answer == "yes" || answer == "Yes"){;
+   				plusone++;
+							      }		       
+    				cout << plusone <<endl;
+		}
 
 //GIFT REGISTRY
 
