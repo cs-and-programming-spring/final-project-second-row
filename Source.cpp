@@ -36,9 +36,53 @@ struct guest {
 	//INSERT GIFT CODE
 
 //MEAL CHOICE
+	
 
-	cout << "-----Meal Choice-----" << endl;
-	//INSERT MEAL CODE
+		int choice;
+		enum meal { steak = 1, chicken = 2, vegetarian = 3 };
+
+		cout << "-----Meal Choice-----" << endl;
+		cout << "Options" << endl;
+		cout << "Enter 1 for Steak" << endl;
+		cout << "Enter 2 for Chicken" << endl;
+		cout << "enter 3 for Vegetarian" << endl;
+		cin >> choice;
+		if (choice == 1) {
+			cout << "You selected Steak" << endl;
+		}
+		else if (choice == 2) {
+			cout << "You selected Chicken" << endl;
+		}
+		else if (choice == 3) {
+			cout << "You selected Vegetarian" << endl;
+		}
+
+		// enter date's meal 
+		int date;
+		cout << "Are you bringing a date" << endl;
+		cout << "Eneter 1 for yes and 2 for no" << endl;
+		cin >> date;
+		if (date == 1) {
+			cout << "What Meal would your date like?" << endl;
+			cout << "Options" << endl;
+			cout << "Enter 1 for Steak" << endl;
+			cout << "Enter 2 for Chicken" << endl;
+			cout << "enter 3 for Vegetarian" << endl;
+			cin >> choice;
+			if (choice == 1) {
+				cout << "You selected Steak" << endl;
+			}
+			else if (choice == 2) {
+				cout << "You selected Chicken" << endl;
+			}
+			else if (choice == 3) {
+				cout << "You selected Vegetarian" << endl;
+			}
+		}
+
+
+
+	
 
 
 //HOTEL BOOKING
