@@ -24,13 +24,15 @@ using namespace std;
 class wedding
 {
 public:
-    int seats;
-    int rooms;
     string meals[3];
     void create();
     void display();
     void display_meals();
     void delete_wedding();
+	
+private:
+    int seats;
+    int rooms;
 };
 
 
@@ -181,7 +183,19 @@ reservation_file.close();
 } //int main
 
 
+void wedding::setSeats(int newSeats){
+    seats = newSeats;
+}
+void wedding::setRooms(int newRooms){
+    rooms = newRooms;
+}
 
+int wedding::getSeats(){
+    return seats;
+}
+int wedding::getRooms(){
+    return rooms;
+}
 
 void wedding::create()
 {
@@ -215,11 +229,11 @@ void wedding::create()
     //  string meal="";
     top:
     do {
-        cout<<"AAD MEALS:";
+        cout<<"Add Meals:";
         cin>>wedding::meals[i];
         //weeding_attributes.meals[i] = meal;
         weeding_file<<i+1<<". "<<"Meal: "<<wedding::meals[i]<<"\n";
-        cout<<"do you want to add an other [y/n]:";
+        cout<<"Do you want to add an other [y/n]:";
         cin>>a;
         i++;
     }
@@ -283,7 +297,7 @@ void  guest::create(){
             reservation reser;
             reser.create(fname+" "+lname);
            }
-        cout<<"do you want to add another guest [y/n]:";
+        cout<<"Do you want to add another guest? [y/n]:";
         cin>>a;
         i++;
 
