@@ -95,7 +95,7 @@ using namespace std;
 
 class guest
 {
-public:
+private:
 	string name;
 	bool date;
 	int age;
