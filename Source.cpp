@@ -96,8 +96,8 @@ int main(){
 		//INSERT CODE FOR PROGRAM 1
     int choice_1;
      cout << "-----(1) To create a wedding-----" << endl;
-     cout << "-----(2) view exiting wedding-----" << endl;
-     cout << "-----(3) delete exiting wedding-----" << endl;
+     cout << "-----(2) View exiting wedding-----" << endl;
+     cout << "-----(3) Delete exiting wedding-----" << endl;
 	 cout << "Please enter a number between 1 & 7: ";
 	   cin >> choice_1;
      if (choice_1 == 1){
@@ -118,8 +118,8 @@ int main(){
         reservation reserv;
 		 int choice_2;
      cout << "-----(1) To create an reservation-----" << endl;
-     cout << "-----(2) view exiting reservation-----" << endl;
-     cout << "-----(3) delete exiting reservation-----" << endl;
+     cout << "-----(2) View existing reservation-----" << endl;
+     cout << "-----(3) delete existing reservation-----" << endl;
 	 cout << "Please enter a number between 1 & 3: ";
 	   cin >> choice_2;
      if (choice_2 == 1){
