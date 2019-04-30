@@ -1,3 +1,11 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
 /*************************************************************************************
 * Name:		Second Row Final Project
 * Members:	Alex B., David A. M., Issouf K., Kristen H., Neil Y., Nick S., & Rob M.
@@ -10,17 +18,19 @@
 #include<stdlib.h>
 using namespace std;
 
+    int number_of_rooms_avalaible = 0;
+    int number_of_seats_avalaible = 0;
 
 class wedding
 {
 public:
+    int seats;
+    int rooms;
+    string meals[3];
     void create();
-    // void query();
     void display();
-    // void update();
+    void display_meals();
     void delete_wedding();
-    void wedding_planner();
-    void guest();
 };
 
 
@@ -28,20 +38,24 @@ public:
 class reservation
 {
 public:
-    void create();
+    void create(string user_name);
     // void query();
     void display();
     // void update();
     void delete_reservation();
+    int number_of_rooms;
+
 };
 
 
 class guest
 {
+// private:
+//   string Guest_list[];
 public:
     void create();
-    // void query();
     void display();
+    //void set_guest_list_size(size);
     void update();
     void delete_guest();
     string fname;
@@ -50,125 +64,11 @@ public:
 
 };
 
-void wedding::create()
-{
-      char a;
-      int seats;
-      int i = 0;
-
-      //preparing the weeding file
-      ofstream weeding_file;
-      weeding_file.open ("weeding_file.txt");
-      cout<<"HOW MANY SEATS:";
-      cin>>seats;
-
-      // writing the num of seats into file
-      weeding_file<<"Seats: "<<seats<<"\n";
-      cin.ignore();
-      int rooms;
-      cout<<"HOW MANY ROOMS:";
-      cin>>rooms;
-      weeding_file<<"rooms: "<<rooms<<"\n";
-      cin.ignore();
-
-      string meal="";
-    top:
-    do {
-        cout<<"AAD MEALS:";
-        cin>>meal;
-        //weeding_attributes.meals[i] = meal;
-        weeding_file<<i+1<<". "<<"Meal: "<<meal<<"\n";
-        cout<<"do you want to add an other [y/n]:";
-        cin>>a;
-        i++;
-    }
-    while(a!='n');
-    weeding_file.close();
-}
-
-
-void wedding::display()
-{
-    ifstream wedding_display;
-    wedding_display.open("weeding_file.txt");
-    string line;
-  if (wedding_display.is_open())
-  {
-    while ( getline (wedding_display,line) )
-    {
-      cout << line << '\n';
-    }
-    wedding_display.close();
-  }
-
-  else cout << "Unable to open file";
-
-
-}
-
-void wedding::delete_wedding(){
-    ofstream weeding_file;
-      weeding_file.open ("weeding_file.txt");
-      weeding_file<<"";
-      cout<<"wedding deleted!";
-}
-
-void  guest::create(){
-    ofstream guest_list;
-    guest_list.open("guest_list.txt");
-
-    char a;
-    int i=0;
-
-    top:
-    do {
-        cout<<"ENTER YOUR FIRST NAME \n";
-        cin>>fname;
-        cout<<"ENTER YOUR FIRST NAME \n";
-        cin>>lname;
-        guest_list<<i+1<<". "<<"first name: "<<fname<<", last name: "<<lname<<endl;
-        guest_list<<"---------------------------------------------\n";
-        cout<<"do you want to add an other [y/n]:";
-        cin>>a;
-        i++;
-
-    }while(a!='n');
-        reserv.create();
-        guest_list.close();
-}
-
-void guest::display(){
-
-cout<<"-----guest list----------------\n";
-
-    ifstream guest_list;
-    guest_list.open("guest_list.txt");
-    string line;
-  if (guest_list.is_open())
-  {
-    while ( getline (guest_list,line) )
-    {
-      cout << line << '\n';
-    }
-    guest_list.close();
-  }
-
-  else cout << "Unable to open file";
-
-
-}
-
-void reservation::create(){
-
-enum meal { steak = 1, chicken = 2, vegetarian = 3 };
-
-
-}
-
 // void reserve_your_seat();
 // void sign_in ();
 int main(){
   wedding wedding_1;
+  int meal_choice;
 //--Program Menu--
 	cout << "-----Wedding Program Menu-----" << endl;
 	bool run = true;
@@ -224,6 +124,16 @@ int main(){
     guest myguest;
     myguest.create();
 
+    ofstream reservation_file;
+    reservation_file.open("reservation.txt");
+
+    cout<<"select your meal";
+    wedding_1.display_meals();
+    cin>>meal_choice;
+    if(meal_choice<3 && meal_choice>0){
+    reservation_file<<" and the selected meal is: "<<meal_choice<<"\n";
+    }
+reservation_file.close();
     }
      if (choice_2 == 2){
     // reserv.display();
@@ -266,6 +176,158 @@ int main(){
 			run = false;
 	} //run while
 	cout << endl << "The End. Goodbye.";
-	system("pause");
+	//system("pause");
 	return 0;
 } //int main
+
+
+
+
+void wedding::create()
+{
+      char a;
+      //int seats;
+      int i = 0;
+
+      //preparing the weeding file
+      ofstream weeding_file;
+      weeding_file.open ("weeding_file.txt");
+      cout<<"HOW MANY SEATS:";
+      cin>>wedding::seats;
+
+      // writing the num of seats into file
+      weeding_file<<"Seats: "<<wedding::seats<<"\n";
+
+
+       //set avalaible seats
+      number_of_seats_avalaible = wedding::seats;
+
+      cin.ignore();
+      //int rooms;
+      cout<<"HOW MANY ROOMS:";
+      cin>>wedding::rooms;
+      //set avalaible rooms
+      number_of_rooms_avalaible = wedding::rooms;
+
+      weeding_file<<"rooms: "<<wedding::rooms<<"\n";
+      cin.ignore();
+
+    //  string meal="";
+    top:
+    do {
+        cout<<"AAD MEALS:";
+        cin>>wedding::meals[i];
+        //weeding_attributes.meals[i] = meal;
+        weeding_file<<i+1<<". "<<"Meal: "<<wedding::meals[i]<<"\n";
+        cout<<"do you want to add an other [y/n]:";
+        cin>>a;
+        i++;
+    }
+    while(a!='n' && i<2);
+    weeding_file.close();
+}
+
+void wedding::display_meals(){
+    for (int i; i<3;i++){
+        wedding::meals[i];
+    }
+
+}
+void wedding::display()
+{
+    ifstream wedding_display;
+    wedding_display.open("weeding_file.txt");
+    string line;
+  if (wedding_display.is_open())
+  {
+    while ( getline (wedding_display,line) )
+    {
+      cout << line << '\n';
+    }
+    wedding_display.close();
+  }
+
+  else cout << "Unable to open file";
+
+
+}
+
+void wedding::delete_wedding(){
+    ofstream weeding_file;
+      weeding_file.open ("weeding_file.txt");
+      weeding_file<<"";
+      cout<<"wedding deleted!";
+}
+
+void  guest::create(){
+    ofstream guest_list;
+    guest_list.open("guest_list.txt");
+
+    char a;
+    int i=0;
+    char res;
+    int room_number;
+
+    top:
+    do {
+        cout<<"ENTER YOUR FIRST NAME \n";
+        cin>>fname;
+        cout<<"ENTER YOUR FIRST NAME \n";
+        cin>>lname;
+        guest_list<<i+1<<". "<<"first name: "<<fname<<", last name: "<<lname<<endl;
+        guest_list<<"---------------------------------------------\n";
+        cout<<"do you want to reserve a room [y/n]:";
+        cin>>res;
+
+          if (res ='y'){
+            reservation reser;
+            reser.create(fname+" "+lname);
+           }
+        cout<<"do you want to add another guest [y/n]:";
+        cin>>a;
+        i++;
+
+    }while(a!='n');
+        //reserv.create();
+        guest_list.close();
+}
+
+void guest::display(){
+
+cout<<"-----guest list----------------\n";
+
+    ifstream guest_list;
+    guest_list.open("guest_list.txt");
+    string line;
+  if (guest_list.is_open())
+  {
+    while ( getline (guest_list,line) )
+    {
+      cout << line << '\n';
+    }
+    guest_list.close();
+  }
+
+  else cout << "Unable to open file";
+
+
+}
+
+void reservation::create(string user_name){
+
+std::cout << "Enter number of rooms" << '\n';
+std::cin >> reservation::number_of_rooms;
+
+ofstream reservation_file;
+if (number_of_rooms_avalaible > reservation::number_of_rooms){
+
+    reservation_file.open("reservation.txt");
+    reservation_file<<"number reserved rooms from "<<user_name<<" is: "
+    <<reservation::number_of_rooms<<endl;
+    cout<<"room reserved.\n";
+
+    }else{
+         cout<<"no more avalaible room.\n";
+    }
+reservation_file.close();
+}
