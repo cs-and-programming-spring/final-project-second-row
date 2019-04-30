@@ -1,4 +1,4 @@
-## Wedding Program
+# Wedding Program
 Team Second Row
 Memebers: Alex B., David A. M., Issouf K., Kristen H., Neil Y., Nick S., & Rob M.
 
@@ -8,7 +8,7 @@ Section: 8
 
 This program is for users that are involved with a wedding. There are two types of users, guests that are signing in and the wedding planner who will create the wedding parameters.
 
- # Guests have the ability to:
+ ## Guests have the ability to:
   
         - sign in individually
         
@@ -17,7 +17,7 @@ This program is for users that are involved with a wedding. There are two types 
         - book a room 
         
         
- # The Wedding planner has the ability to:
+ ## The Wedding planner has the ability to:
   
         - set the maximum amount number of guests to log in 
         
