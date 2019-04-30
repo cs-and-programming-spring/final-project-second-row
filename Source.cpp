@@ -126,9 +126,10 @@ int main(){
     reservation_file.open("reservation.txt");
 
     cout<<"select your meal";
-	enum meal { wedding_1.meals[1] = 1 = 1,  wedding_1.meals[2] = 2, wedding_1.meals[3] = 3 };
-		
-   //  wedding_1.display_meals();
+    int meal_choice;
+    
+    enum meal_choice { wedding_1.meals[0] = 1 , wedding_1.meals[1] = 2, wedding_1.meals[2] = 3};
+
     cin>>meal_choice;
     if(meal_choice<3 && meal_choice>0){
     reservation_file<<" and the selected meal is: "<<meal_choice<<"\n";
