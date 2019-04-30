@@ -8,13 +8,14 @@
 #include <string>
 using namespace std;
 
+string * giftRegistry();
 string addGifts();
 void printGifts(string *gifts, int max); 
 
-int main(){
+string * giftRegistry(){
     int choice = -1, slot = 0;  // Slot is used for adding to the end
                                 // and for preventing the print method from printing any empty spaces
-    string gifts[50];
+   static string gifts[50];
     while(choice != 0){
         cout << "Welcome to the gift registry" << endl;
         cout << "Press 1 to add a gift to the registry" << endl;
@@ -36,8 +37,7 @@ int main(){
         else
             cout << "Please enter a valid number" << endl;
     }
-    system("pause");
-    return 0;
+    return gifts;
 }
 
 string addGifts(){
@@ -52,4 +52,3 @@ void printGifts(string * gifts, int max){
     for(int i = 0; i < max; i++)
         cout << gifts[i] << endl;
 }
-
