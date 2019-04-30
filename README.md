@@ -1,7 +1,9 @@
 # Wedding Program
 Team Second Row
 Memebers: Alex B., David A. M., Issouf K., Kristen H., Neil Y., Nick S., & Rob M.
+
 Class: Computer Science and Programming
+
 Section: 8
 
 This program is for users that are involved with a wedding. There are two types of users, guests that are signing in and the wedding planner who will create the wedding parameters.
