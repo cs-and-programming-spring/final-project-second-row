@@ -44,7 +44,10 @@ public:
     void display();
     void update();
     void delete_guest();
-   
+    string fname;
+    string lname;
+
+
 };
 
 void wedding::create()
@@ -74,7 +77,7 @@ void wedding::create()
         cout<<"AAD MEALS:";
         cin>>meal;
         //weeding_attributes.meals[i] = meal;
-        weeding_file<<"Meal number "<<i+1<<": "<<meal<<"\n";
+        weeding_file<<i+1<<". "<<"Meal: "<<meal<<"\n";
         cout<<"do you want to add an other [y/n]:";
         cin>>a;
         i++;
@@ -109,6 +112,59 @@ void wedding::delete_wedding(){
       weeding_file<<"";
       cout<<"wedding deleted!";
 }
+
+void  guest::create(){
+    ofstream guest_list;
+    guest_list.open("guest_list.txt");
+
+    char a;
+    int i=0;
+
+    top:
+    do {
+        cout<<"ENTER YOUR FIRST NAME \n";
+        cin>>fname;
+        cout<<"ENTER YOUR FIRST NAME \n";
+        cin>>lname;
+        guest_list<<i+1<<". "<<"first name: "<<fname<<", last name: "<<lname<<endl;
+        guest_list<<"---------------------------------------------\n";
+        cout<<"do you want to add an other [y/n]:";
+        cin>>a;
+        i++;
+
+    }while(a!='n');
+        reserv.create();
+        guest_list.close();
+}
+
+void guest::display(){
+
+cout<<"-----guest list----------------\n";
+
+    ifstream guest_list;
+    guest_list.open("guest_list.txt");
+    string line;
+  if (guest_list.is_open())
+  {
+    while ( getline (guest_list,line) )
+    {
+      cout << line << '\n';
+    }
+    guest_list.close();
+  }
+
+  else cout << "Unable to open file";
+
+
+}
+
+void reservation::create(){
+
+enum meal { steak = 1, chicken = 2, vegetarian = 3 };
+
+
+}
+
 // void reserve_your_seat();
 // void sign_in ();
 int main(){
@@ -154,9 +210,28 @@ int main(){
 	}
 //--Program 2--
 	if (choice == 2) {
-		cout << "-----Program 2-----" << endl;
 
-	}
+		cout << "-----Guest-----" << endl;
+
+        reservation reserv;
+		 int choice_2;
+     cout << "-----(1) To create an reservation-----" << endl;
+     cout << "-----(2) view exiting reservation-----" << endl;
+     cout << "-----(3) delete exiting reservation-----" << endl;
+	 cout << "Please enter a number between 1 & 3: ";
+	   cin >> choice_2;
+     if (choice_2 == 1){
+    guest myguest;
+    myguest.create();
+
+    }
+     if (choice_2 == 2){
+    // reserv.display();
+    }
+     if (choice_2 == 3){
+    // reserv.delete_reservation();
+
+	}}
 //--Program 3--
 	if (choice == 3) {
 		cout << "-----Program 3-----" << endl;
