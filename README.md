@@ -1,8 +1,10 @@
 # Wedding Program
 Team Second Row
-Memebers Alex B., David A. M., Issouf K., Kristen H., Neil Y., Nick S., & Rob M.
+Memebers: Alex B., David A. M., Issouf K., Kristen H., Neil Y., Nick S., & Rob M.
+Class: Computer Science and Programming
+Section: 8
 
-This program is for users that are involved in a wedding. There are two users, guests that are signing in and the wedding planner.  
+This program is for users that are involved with a wedding. There are two types of users, guests that are signing in and the wedding planner who will create the wedding parameters.
 
   Guests have the ability to:
   
@@ -10,68 +12,15 @@ This program is for users that are involved in a wedding. There are two users, g
         
         - choose a meal
         
-        - register a gift
-        
-        - book a hotel room 
+        - book a room 
         
         
   The Wedding planner has the ability to:
   
-        - set the maximum amount number seats 
+        - set the maximum amount number of guests to log in 
         
-        - set up the menu for guests to choose a meal from 
-        
-        - set up the registry [can choose gifts or choose cash]
+        - register up to three (3) meals for the guests
         
         - overlook all the guests that signed in 
         
-                  (name, meal, gift, yes or no if guest booked a hotel room)
-                  
-                  
-  This is the Wedding Planner's password
-  
-    Password: _____
-
-
-# PSEDUO CODE DOWN BELOW
-
-{
-First menu "Guest or Wedding Planner?" (Issouf - main menu and declaration of functions)
-
-If Wedding Planner - must give password
-
-         - Displays menu for Wedding Planner to choose from (1-4)
-         
-             1 - Sets the maximum amount of guests [testing purposes, let's do 5] (David A.) 
-             
-             2 - Input and edit the food menu [let's do 3 meals beef, chicken, vegetarian as a base] (Rob)
-             
-             3 - Input and edit the gift registry. Must always have cash as an option (Alex) 
-             
-             4 - Displays all guests that signed in (this can be done last) 
-             
-If Guest - Input name
-
-         - If maximum amount of guests are reached, will display "Sorry, no more room :("
-         
-         - Display menu for guest to choose from (1-3) (Kristen) 
-         
-             1 - Ask if they want to choose a meal
-             
-                 - Display Beef, Chicken, Vegetarian 
-                 
-                 - Returns to menu after chosen option
-                 
-             2 - Ask if they want to register a gift
-             
-                 - If yes, displays list of 5 gifts and the option to give cash
-                 
-                 - If no, exits the menu
-                 
-             3 - Ask if they did book a room (Neil)
-             
-                 - If yes, asks for name and credit card information to forward to the hotel
-                 
-                 - If no, exits the menu
-                 
-}
+                  (name, meal, yes or no if guest booked a hotel room)
