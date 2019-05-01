@@ -283,7 +283,7 @@ void  guest::create(int &number_of_seats_avalaible,int& number_of_rooms_avalaibl
             guest_list<<" ,need a room, ";
             number_of_rooms_avalaible --;
            }
-           cout<<"select your meal [1,2 or 3]: ";
+           cout<<"select your meal [1,2 or 3]: \n";
 
            ifstream wedding_display;
 
