@@ -10,19 +10,21 @@ This program is for users that are involved with a wedding. There are two types 
 
  ## Guests have the ability to:
   
-        - sign in individually
+        - sign in individually with their first name and last name
         
         - choose a meal
         
-        - book a room 
+        - book a certain number of hotel rooms 
         
         
  ## The Wedding planner has the ability to:
   
-        - set the maximum amount number of guests to log in 
+        - set the maximum amount of guests to log in 
+        
+        - set the maximum amount of hotel rooms for guests to reserve
         
         - register up to three (3) meals for the guests
         
         - overlook all the guests that signed in 
         
-                  (name, meal, yes or no if guest booked a hotel room)
+                  (name, meal, a plus-one, number of hotel rooms they reserved)
