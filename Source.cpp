@@ -1,23 +1,3 @@
-/******************************************************************************
-
-                              Online C++ Compiler.
-               Code, Compile, Run and Debug C++ program online.
-Write your code in this editor and press "Run" button to compile and execute it.
-
-*******************************************************************************/
-
-/*************************************************************************************
-* Name:		Second Row Final Project
-* Members:	Alex B., David A. M., Issouf K., Kristen H., Neil Y., Nick S., & Rob M.
-* Purpose:	Wedding Program
-*************************************************************************************/
-#/******************************************************************************
-
-                              Online C++ Compiler.
-               Code, Compile, Run and Debug C++ program online.
-Write your code in this editor and press "Run" button to compile and execute it.
-
-*******************************************************************************/
 
 /*************************************************************************************
 * Name:		Second Row Final Project
@@ -31,44 +11,36 @@ Write your code in this editor and press "Run" button to compile and execute it.
 #include<stdlib.h>
 using namespace std;
 
-    int number_of_rooms_avalaible = 0;
-    int number_of_seats_avalaible = 0;
 
 class wedding
 {
+
+private:
+  int seats;
+  int rooms;
+
 public:
-    int seats;
-    int rooms;
+
     string meals[3];
-    void create();
+    void create(int &seats,int &rooms);
     void display();
     void display_meals();
     void delete_wedding();
-};
-
-
-
-class reservation
-{
-public:
-    void create(string user_name);
-    // void query();
-    void display();
-    // void update();
-    void delete_reservation();
-    int number_of_rooms;
+    void set_seats_number(int seats);
+    int get_seats_number();
+    void set_room_number(int rooms);
+    int get_room_number();
 
 };
+
 
 
 class guest
 {
-// private:
-//   string Guest_list[];
+
 public:
-    void create();
+    void create(int &seats,int &rooms);
     void display();
-    //void set_guest_list_size(size);
     void update();
     void delete_guest();
     string fname;
@@ -77,11 +49,15 @@ public:
 
 };
 
-// void reserve_your_seat();
-// void sign_in ();
+
 int main(){
+
+  //vars
   wedding wedding_1;
   int meal_choice;
+  int number_of_rooms_avalaible = 0;
+  int number_of_seats_avalaible = 0;
+
 //--Program Menu--
 	cout << "-----Wedding Program Menu-----" << endl;
 	bool run = true;
@@ -107,12 +83,14 @@ int main(){
 		//INSERT CODE FOR PROGRAM 1
     int choice_1;
      cout << "-----(1) To create a wedding-----" << endl;
-     cout << "-----(2) view exiting wedding-----" << endl;
-     cout << "-----(3) delete exiting wedding-----" << endl;
+     cout << "-----(2) view existing wedding-----" << endl;
+     cout << "-----(3) delete existing wedding-----" << endl;
 	 cout << "Please enter a number between 1 & 7: ";
 	   cin >> choice_1;
      if (choice_1 == 1){
-      wedding_1.create();
+      wedding_1.create(number_of_seats_avalaible,number_of_rooms_avalaible);
+      wedding_1.set_seats_number(number_of_seats_avalaible) ;
+      wedding_1.set_seats_number(number_of_rooms_avalaible) ;
     }
      if (choice_1 == 2){
      wedding_1.display();
@@ -126,30 +104,18 @@ int main(){
 
 		cout << "-----Guest-----" << endl;
 
-        reservation reserv;
 		 int choice_2;
      cout << "-----(1) To create an reservation-----" << endl;
-     cout << "-----(2) view exiting reservation-----" << endl;
-     cout << "-----(3) delete exiting reservation-----" << endl;
-	 cout << "Please enter a number between 1 & 3: ";
+     cout << "-----(2) view existing reservation-----" << endl;
+     cout << "-----(3) delete existing reservation-----" << endl;
+	   cout << "Please enter a number between 1 & 3: ";
 	   cin >> choice_2;
      if (choice_2 == 1){
-    guest myguest;
-    myguest.create();
-
-    ofstream reservation_file;
-    reservation_file.open("reservation.txt",ios::app);
-
-    // cout<<"select your meal";
-    // wedding_1.display_meals();
-    // cin>>meal_choice;
-    // if(meal_choice<3 && meal_choice>0){
-    // reservation_file<<" and the selected meal is: "<<meal_choice<<"\n";
-    // }
-reservation_file.close();
+        guest myguest;
+        myguest.create(number_of_seats_avalaible,number_of_rooms_avalaible);
     }
      if (choice_2 == 2){
-    // reserv.display();
+
     }
      if (choice_2 == 3){
     // reserv.delete_reservation();
@@ -196,7 +162,7 @@ reservation_file.close();
 
 
 
-void wedding::create()
+void wedding::create(int &number_of_seats_avalaible,int& number_of_rooms_avalaible )
 {
       char a;
       //int seats;
@@ -240,10 +206,19 @@ void wedding::create()
     wedding_file.close();
 }
 
-// void wedding::display_meals(){
-//
-//
-// }
+void wedding::set_seats_number(int seats){
+seats = seats;
+}
+int wedding::get_seats_number(){
+  return seats;
+}
+void wedding::set_room_number(int rooms){
+rooms = rooms;
+}
+int wedding::get_room_number(){
+  return rooms;
+}
+
 void wedding::display()
 {
     ifstream wedding_display;
@@ -270,7 +245,8 @@ void wedding::delete_wedding(){
       cout<<"wedding deleted!";
 }
 
-void  guest::create(){
+void  guest::create(int &number_of_seats_avalaible,int& number_of_rooms_avalaible )
+{
     ofstream guest_list;
     guest_list.open("guest_list.txt");
 
@@ -279,6 +255,8 @@ void  guest::create(){
     char res;
     int count=0;
     int seats=1;
+    int seat_max = number_of_seats_avalaible;
+    int room_max = number_of_rooms_avalaible;
     int room_number;
     int guest_meal=0;
     int plusOne_meal=0;
@@ -297,14 +275,15 @@ void  guest::create(){
           seats++;
           plusOne=true;
         }
+
         cout<<"do you want to reserve a room [y/n]:";
         cin>>res;
 
-          if (res ='y'){
-            guest_list<<" need a room ";
-
+          if (res ='y' && (number_of_rooms_avalaible<room_max)){
+            guest_list<<" ,need a room, ";
+            number_of_rooms_avalaible --;
            }
-           cout<<"select your meal: ";
+           cout<<"select your meal [1,2 or 3]: ";
 
            ifstream wedding_display;
 
@@ -314,10 +293,10 @@ void  guest::create(){
            {
            while ( getline (wedding_display,line) )
            {
-             // count++;
-             // if (count ==2){
+             count++;
+             if (count > 2){
              cout << line << '\n';
-           // }
+           }
 
            }
             cin >> guest_meal;
@@ -327,8 +306,10 @@ void  guest::create(){
 
            if (plusOne){
 
-             cout<<"select  plus one meal";
+             cout<<"select  plus one meal number:";
              cin >> plusOne_meal;
+             guest_list<<" plus one meal: "<<plusOne_meal<<"\n";
+
            }
            guest_list<<"---------------------------------------------\n";
 
@@ -355,23 +336,4 @@ cout<<"-----guest list----------------\n";
   else cout << "Unable to open file";
 
 
-}
-
-void reservation::create(string user_name){
-
-std::cout << "Enter number of rooms" << '\n';
-std::cin >> reservation::number_of_rooms;
-
-ofstream reservation_file;
-if (number_of_rooms_avalaible > reservation::number_of_rooms){
-
-    reservation_file.open("guest_list.txt",ios::app);
-    reservation_file<<"number reserved rooms from "
-    <<reservation::number_of_rooms<<endl;
-    cout<<"room reserved.\n";
-
-    }else{
-         cout<<"no more avalaible room.\n";
-    }
-reservation_file.close();
 }
