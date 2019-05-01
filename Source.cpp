@@ -263,7 +263,7 @@ void  guest::create(int &number_of_seats_avalaible,int& number_of_rooms_avalaibl
     bool plusOne=false;
 
 
-
+    if (number_of_seats_avalaible <= seat_max){
         cout<<"ENTER YOUR FIRST NAME \n";
         cin>>fname;
         cout<<"ENTER YOUR LAST NAME \n";
@@ -279,7 +279,7 @@ void  guest::create(int &number_of_seats_avalaible,int& number_of_rooms_avalaibl
         cout<<"do you want to reserve a room [y/n]:";
         cin>>res;
 
-          if (res ='y' && (number_of_rooms_avalaible<room_max)){
+          if (res ='y' && (number_of_rooms_avalaible<=room_max)){
             guest_list<<" ,need a room, ";
             number_of_rooms_avalaible --;
            }
@@ -315,6 +315,9 @@ void  guest::create(int &number_of_seats_avalaible,int& number_of_rooms_avalaibl
 
         //reserv.create();
         guest_list.close();
+      }else{
+        std::cout << "no seats avalaible" << '\n';
+      }
 }
 
 void guest::display(){
