@@ -38,6 +38,7 @@ public:
 class guest
 {
 
+
 public:
     void create(int &seats,int &rooms);
     void display();
@@ -85,7 +86,7 @@ int main(){
      cout << "-----(1) To create a wedding-----" << endl;
      cout << "-----(2) view existing wedding-----" << endl;
      cout << "-----(3) delete existing wedding-----" << endl;
-	 cout << "Please enter a number between 1 & 7: ";
+	 cout << "Please enter a number between 1 & 3: ";
 	   cin >> choice_1;
      if (choice_1 == 1){
       wedding_1.create(number_of_seats_avalaible,number_of_rooms_avalaible);
@@ -102,25 +103,33 @@ int main(){
 //--Program 2--
 	if (choice == 2) {
 
-		cout << "-----Guest-----" << endl;
+    		cout << "-----Guest-----" << endl;
 
-		 int choice_2;
-     cout << "-----(1) To create an reservation-----" << endl;
-     cout << "-----(2) view existing reservation-----" << endl;
-     cout << "-----(3) delete existing reservation-----" << endl;
-	   cout << "Please enter a number between 1 & 3: ";
-	   cin >> choice_2;
-     if (choice_2 == 1){
-        guest myguest;
-        myguest.create(number_of_seats_avalaible,number_of_rooms_avalaible);
-    }
-     if (choice_2 == 2){
+    		 int choice_2;
+         cout << "-----(1) To create an reservation-----" << endl;
+         cout << "-----(2) view existing reservation-----" << endl;
+         cout << "-----(3) delete existing reservation-----" << endl;
+    	   cout << "Please enter a number between 1 & 3: ";
+    	   cin >> choice_2;
+         if (choice_2 == 1){
+           char r;
+           do {
+             guest myguest;
+             myguest.create(number_of_seats_avalaible,number_of_rooms_avalaible);
+             cout << "Add more guest ?[y/n]: " << endl;
+             cin >> r;
+           } while(r !='n');
 
-    }
-     if (choice_2 == 3){
-    // reserv.delete_reservation();
+        }
+         if (choice_2 == 2){
+           guest g;
+           g.display();
+        }
+         if (choice_2 == 3){
+        // reserv.delete_reservation();
 
-	}}
+	}
+}
 //--Program 3--
 	if (choice == 3) {
 		cout << "-----Program 3-----" << endl;
@@ -172,31 +181,23 @@ void wedding::create(int &number_of_seats_avalaible,int& number_of_rooms_avalaib
       ofstream wedding_file;
       wedding_file.open ("wedding_file.txt");
       cout<<"HOW MANY SEATS:";
-      cin>>wedding::seats;
+      cin>>number_of_seats_avalaible;
 
       // writing the num of seats into file
-      wedding_file<<"Seats: "<<wedding::seats<<"\n";
-
-
-       //set avalaible seats
-      number_of_seats_avalaible = wedding::seats;
+      wedding_file<<"Seats: "<<number_of_seats_avalaible<<"\n";
 
       cin.ignore();
       //int rooms;
       cout<<"HOW MANY ROOMS:";
-      cin>>wedding::rooms;
-      //set avalaible rooms
-      number_of_rooms_avalaible = wedding::rooms;
+      cin>>number_of_rooms_avalaible;
 
-      wedding_file<<"rooms: "<<wedding::rooms<<"\n";
+      wedding_file<<"rooms: "<<number_of_rooms_avalaible<<"\n";
       cin.ignore();
 
-    //  string meal="";
     top:
     do {
         cout<<"ADD MEALS:";
         cin>>wedding::meals[i];
-        //weeding_attributes.meals[i] = meal;
         wedding_file<<i+1<<". "<<"Meal: "<<wedding::meals[i]<<"\n";
         cout<<"do you want to add an other [y/n]:";
         cin>>a;
@@ -268,7 +269,7 @@ void  guest::create(int &number_of_seats_avalaible,int& number_of_rooms_avalaibl
         cin>>fname;
         cout<<"ENTER YOUR LAST NAME \n";
         cin>>lname;
-        guest_list<<i+1<<". "<<"first name: "<<fname<<", last name: "<<lname;
+        guest_list<<" first name: "<<fname<<", last name: "<<lname;
         cout<<"do you have a plus one [y/n]:";
         cin>>a;
         if (a == 'y'){
@@ -311,7 +312,7 @@ void  guest::create(int &number_of_seats_avalaible,int& number_of_rooms_avalaibl
              guest_list<<" plus one meal: "<<plusOne_meal<<"\n";
 
            }
-           guest_list<<"---------------------------------------------\n";
+           guest_list<<"----------------------------------------------------\n";
 
         //reserv.create();
         guest_list.close();
